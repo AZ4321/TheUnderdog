@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
     public CharacterController controller;
 
     public Transform cam;
@@ -14,16 +18,24 @@ public class ThirdPersonMovement : MonoBehaviour
     public float gravity = 9.81f;
     public float jumpHeight = 3;
     Vector3 velocity;
+<<<<<<< HEAD
 
     bool isGrounded;
+=======
+    bool isGrounded;
+
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+<<<<<<< HEAD
 
     public float jumpCoolDown = 2f;
     public float timeSinceJump = 0.0f;
 
+=======
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
     public float turnSmoothTime = 0.1f;
 
     public float turnSmoothVelocity;
@@ -32,9 +44,12 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 
         timeSinceJump += Time.deltaTime;
 
+=======
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
         //jump
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
@@ -42,12 +57,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
         {
             velocity.y = -2f;
+<<<<<<< HEAD
 
+=======
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
 
         {
+<<<<<<< HEAD
             if (timeSinceJump > jumpCoolDown)
             {
                 timeSinceJump = 0;
@@ -56,6 +75,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
         }
 
+=======
+            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+        }
+>>>>>>> b7546f80695fdbc30557c4cf27f8f94bae812e1c
         //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
