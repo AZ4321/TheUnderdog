@@ -21,7 +21,6 @@ public class Interactable : MonoBehaviour
 
     }
 
-
     void Update()
     {
 
@@ -39,7 +38,7 @@ public class Interactable : MonoBehaviour
             //TODO: Make sure that once the player leaves the area of the item, the focus is back to nothing
             if (distance != radius)
             {
-                //OnDeFocused();
+                OnDeFocused();
             }
 
 

@@ -9,6 +9,7 @@ public class ItemFocus : MonoBehaviour
 
     public Interactable focus;
 
+    Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class ItemFocus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -35,7 +37,11 @@ public class ItemFocus : MonoBehaviour
             }
         }
 
-
+        //This system needs re-doing to one that is independent of the mouse and works in an area.
+        //TODO: Delete mouse button checks and instead do is the player within the radius of the item?
+        //If YES: focus
+        //If NO: Defocus
+        
         if (Input.GetMouseButtonDown(1))
         {
 
@@ -65,9 +71,8 @@ public class ItemFocus : MonoBehaviour
         {
             if (focus != null)
                 focus.OnDeFocused();
+                focus = newFocus;
 
-            
-            focus = newFocus;
         }
 
         newFocus.OnFocused(transform);
