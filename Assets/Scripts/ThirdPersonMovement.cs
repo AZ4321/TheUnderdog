@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
@@ -40,6 +39,10 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
 
         timeSinceJump += Time.deltaTime;
 
